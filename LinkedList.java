@@ -1,3 +1,5 @@
+//REVERSE LINKED LIST
+
 package set;
 
 public class LinkedList {
@@ -60,3 +62,7 @@ public class LinkedList {
 		
 	}
 }
+
+
+OUTPUT; 4 3 2 1  
+        1 2 3 4 
