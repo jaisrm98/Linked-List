@@ -81,7 +81,7 @@ public class LinkedList {
 	while(n!=null)
 	{
 		if(n.data==data) {
-			System.out.println("found at "+c);
+			System.out.println(data+" found at index"+c);
 		t=true;}
 		c++;
 		n=n.next;
@@ -129,6 +129,11 @@ public class LinkedList {
 		
 	}
 	
-	
+	Output: 1 2 3 
+		1 4 2 3 
+		1 4 2 3 5 
+		1 4 2 3 
+		4 found at index 1
+		3 2 4 1 
 
 
