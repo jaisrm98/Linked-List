@@ -72,3 +72,10 @@ public class Middle_Node {
 	}
 	
 }
+
+Output: 1 2 3 4 
+	print mid node value
+	3
+
+	print after middle node
+	3 4 
