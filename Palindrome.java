@@ -81,3 +81,6 @@ public class Palindrome {
 		
 	}
 }
+
+Output: 3 2 3 
+	Linked list is Palindrome
