@@ -17,7 +17,7 @@ public class Remove_dublicate {
 	void remove_duplicates() {
 		Node ptr1 = head;
 		Node ptr2 = null;
-		while (ptr1.next != null) {
+		while (ptr1.next != null && ptr1 != null) {
 			ptr2 = ptr1;
 			while (ptr2.next != null) {
 				if (ptr1.data == ptr2.next.data)
