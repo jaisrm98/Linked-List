@@ -57,3 +57,6 @@ public class Find_Nth_Node {
 		list.find(2);
 	}
 }
+
+Output: 1 2 3 
+	2 found at index 1
