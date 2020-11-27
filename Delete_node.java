@@ -46,3 +46,6 @@ public class Delete_node {
 		list.traverse(head);
 	}
 }
+
+Output: 1 2 3 
+	1 3 
