@@ -29,9 +29,10 @@ public class LinkedList {
 	 {
 	 Node last=new Node(data);
 	 Node n=head;
-	 if(head==null)
+	 if(head==null){
 		 head=new Node(data);
-	 last.next=null;
+	 last.next=null;}
+   else{
 	while(n.next!=null)
 	{
 		n=n.next;
@@ -39,6 +40,7 @@ public class LinkedList {
 	}
 	n.next=last;
 	 }
+	}
 	 
 	 void del(int pos)
 	 {
