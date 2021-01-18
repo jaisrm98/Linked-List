@@ -17,7 +17,7 @@ public class LinkedList {
 	{
 		Node first=new Node(data);
 		first.next=head;
-		first=head;
+		head=first;
 	}
 	 void given(Node prev,int data)
 	 {
