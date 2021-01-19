@@ -1,0 +1,64 @@
+package Linklist;
+
+public class Find_Nth_node {
+
+		static Node head;
+		static class Node
+		{
+			int data;
+			Node next;
+			Node(int data)
+			{
+				this.data=data;
+				next=null;
+			}
+		}
+		void add(int data)
+		{
+			Node n=head;
+			Node add=new Node(data);
+			add.next=head;
+			head=add;
+		}
+		void GetNode(int index)
+		{
+			Node n=head;
+			int c=0;
+			if(head==null)
+				System.out.println("List is empty");
+			while(n!=null)
+			{
+				if(c==index)
+				{
+					System.out.println(n.data);
+				}
+				c++;
+				n=n.next;
+			}
+		}
+		void traverse(Node n)
+		{
+			while(n!=null)
+			{
+				System.out.print(n.data+" ");
+				n=n.next;
+			}
+						
+		}
+	public static void main(String[] args) {
+		Find_Nth_node list=new Find_Nth_node();
+		list.add(3);
+		list.add(2);
+		list.add(1);
+		list.traverse(head);
+		System.out.println();
+		list.GetNode(1);
+		
+
+	}
+
+}
+
+Output:1 2 3 
+       2
+
