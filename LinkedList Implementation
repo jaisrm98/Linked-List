@@ -1,0 +1,133 @@
+package Linklist;
+
+public class Make_LinkedList {
+	static Node head;
+	static class Node
+	{
+		int data;
+		Node next;
+		Node(int data)
+		{
+			this.data=data;
+		}
+	}
+	void addfront(int data)
+	{
+		Node add=new Node(data);
+		add.next=head;
+		head=add;
+	}
+	void addlast(int data)
+	{
+		Node n=head;
+		Node last=new Node(data);
+		if(head==null) {
+			head=new Node(data);
+		head.next=null;}
+		else
+		{
+			
+			while(n.next!=null) {
+				n=n.next;
+			}
+			n.next=last;
+		}
+		
+	}
+	void delete(int pos)
+	{	Node n=head;
+	if(head==null)
+		return;
+		if(pos==1)
+		{
+			head=head.next;
+		}
+		else
+		{
+			for(int i=1;i<pos-1;i++)
+			{
+				n=n.next;
+			}
+			if(n==null|| n.next==null)
+				return;
+			n.next=n.next.next;
+		}
+	}
+	Node reverse()
+	{
+		Node n=head;
+		Node next=null;
+		Node prev=null;
+		Node current=head;
+		while(current!=null)
+		{
+			next=current.next;
+			current.next=prev;
+			prev=current;
+			current=next;
+		}
+		head=prev;
+		return head;
+	}
+	void search(int data)
+	{
+		Node n=head;
+		boolean t=false;
+		 int c=0;
+		while(n!=null)
+		{
+			if(n.data==data)
+			{
+				System.out.println(n.data+" found at index "+c);
+				t=true;
+			}
+			c++;
+			n=n.next;
+		}
+		if(!t)
+			System.out.println(n.data+" not found");
+	}
+	void traverse(Node n)
+	{
+		
+		while(n!=null)
+		{
+			System.out.print(n.data+" ");
+			n=n.next;
+		}
+	}
+	public static void main(String args[])
+	{
+		Make_LinkedList list=new Make_LinkedList();
+		list.head=new Node(1);
+		Node second=new Node(2);
+		Node third=new Node(3);
+		list.head.next=second;
+		second.next=third;
+		list.traverse(head);
+		System.out.println();
+		list.addfront(0);
+		list.traverse(head);
+		System.out.println();
+		list.addlast(4);
+		list.traverse(head);
+		System.out.println();
+		list.delete(4);
+		list.traverse(head);
+		System.out.println();
+		head=list.reverse();
+		list.traverse(head);
+		System.out.println();
+		list.search(1);
+		
+	}
+
+}
+
+
+Output: 1 2 3 
+        0 1 2 3 
+        0 1 2 3 4 
+        0 1 2 4 
+        4 2 1 0 
+        1 found at index 2
