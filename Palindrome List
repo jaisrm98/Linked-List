@@ -22,7 +22,8 @@ public class Palindrome_list {
 	static boolean ispalindrome(Node n)
 	{
 		Stack<Integer>stk=new Stack<Integer>();
-		
+		if(n==null)
+			return true;
 		while(n!=null)
 		{
 			stk.push(n.data);
