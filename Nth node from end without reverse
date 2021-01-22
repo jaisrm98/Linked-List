@@ -1,0 +1,65 @@
+package Linklist;
+
+public class Nth_Node_From_End {
+	static Node head;
+	static class Node
+	{
+		int data;
+		Node next;
+		Node(int data)
+		{
+			this.data=data;
+			next=null;
+		}
+	}
+	void add(int data)
+	{
+		Node add=new Node(data);
+		add.next=head;
+		head=add;
+	}
+	void search(int key)
+	{
+		Node n=head;
+		int length=0;
+		while(n!=null)
+		{
+			length++;
+			n=n.next;
+		}
+		if(length<key)
+			return;
+		n=head;
+		for(int i=0;i<length-key;i++)
+		{
+			n=n.next;
+		}
+		System.out.println(n.data);
+	}
+	
+	void traverse(Node n)
+	{
+		while(n!=null)
+		{
+			System.out.print(n.data+" ");
+			n=n.next;
+		}
+	}
+	public static void main(String[] args) {
+		Nth_Node_From_End list=new Nth_Node_From_End();
+		list.add(4);
+		list.add(3);
+		list.add(2);
+		list.add(1);
+		list.traverse(head);
+		System.out.println();
+		list.search(3);
+		
+		
+		
+	}
+
+}
+
+Output: 1 2 3 4 
+        2
