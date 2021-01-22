@@ -1,0 +1,66 @@
+package Linklist;
+import java.util.*;
+public class Palindrome_list {
+	static Node head;
+	static class Node
+	{
+		int data;
+		Node next;
+		Node(int data) 
+		{
+			this.data=data;
+			next=null;
+		}
+		
+	}
+	void add(int data)
+	{
+		Node add=new Node(data);
+		add.next=head;
+		head=add;
+	}
+	static boolean ispalindrome(Node n)
+	{
+		Stack<Integer>stk=new Stack<Integer>();
+		
+		while(n!=null)
+		{
+			stk.push(n.data);
+			n=n.next;
+		}
+		
+	n=head;
+	while(n!=null)
+	{
+	int i=stk.pop();
+	if(n.data!=i) {
+		return false;
+	}
+	n=n.next;
+	}
+	return true;
+	}
+	void traverse(Node n)
+	{
+		while(n!=null)
+		{	
+			System.out.print(n.data+" ");
+			n=n.next;
+		}
+	}
+	
+	public static void main(String[] args) throws CloneNotSupportedException {
+		Palindrome_list list=new Palindrome_list();
+		list.add(1);
+		list.add(2);
+		list.add(2);
+		list.add(1);
+		list.traverse(head);
+		System.out.println();
+		System.out.println(list.ispalindrome(head));
+	}
+
+}
+
+Output: 1 2 2 1 
+        true
