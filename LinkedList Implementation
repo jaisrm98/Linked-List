@@ -17,6 +17,13 @@ public class Make_LinkedList {
 		add.next=head;
 		head=add;
 	}
+	void aftergivenNode(Node prev,int data)
+	
+	{
+		Node given=new Node(data);
+		given.next=prev.next;
+		prev.next=given;
+	}
 	void addlast(int data)
 	{
 		Node n=head;
@@ -106,6 +113,9 @@ public class Make_LinkedList {
 		second.next=third;
 		list.traverse(head);
 		System.out.println();
+		list.aftergivenNode(second, 2);
+		list.traverse(head);
+		System.out.println();
 		list.addfront(0);
 		list.traverse(head);
 		System.out.println();
@@ -124,10 +134,10 @@ public class Make_LinkedList {
 
 }
 
-
 Output: 1 2 3 
-        0 1 2 3 
-        0 1 2 3 4 
-        0 1 2 4 
-        4 2 1 0 
-        1 found at index 2
+	1 2 2 3 
+	0 1 2 2 3 
+	0 1 2 2 3 4 
+	0 1 2 3 4 
+	4 3 2 1 0 
+	1 found at index 3
