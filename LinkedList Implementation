@@ -26,7 +26,7 @@ public class Make_LinkedList {
 		head.next=null;}
 		else
 		{
-			
+			last.next=null;
 			while(n.next!=null) {
 				n=n.next;
 			}
