@@ -1,0 +1,60 @@
+package Linklist;
+
+public class Sort_List {
+static Node head;
+	static class Node 
+	{
+		int data;
+		Node next;
+		Node(int data)
+		{
+			this.data=data;
+			next=null;
+		}
+	}
+	void sort()
+	{
+		Node current=head;
+		Node nextnode=null;
+		int temp;
+		while(current!=null)
+		{
+			nextnode=current;
+			while(nextnode!=null)
+			{
+				if(current.data>nextnode.data)
+				{	temp=current.data;
+					current.data=nextnode.data;
+					nextnode.data=temp;
+				}
+				nextnode=nextnode.next;
+			}
+			current=current.next;
+		}
+	}
+	void traverse(Node n)
+	{
+		while(n!=null)
+		{
+			System.out.print(n.data+" ");
+			n=n.next;
+		}
+	}
+	public static void main(String[] args) {
+		Sort_List list=new Sort_List();
+		list.head=new Node(2);
+		Node second=new Node(1);
+		Node third=new Node(6);
+		list.head.next=second;
+		second.next=third;
+		list.traverse(head);
+		System.out.println();
+		list.sort();
+		list.traverse(head);
+
+	}
+
+}
+
+Output: 2 1 6 
+        1 2 6 
