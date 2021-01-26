@@ -37,7 +37,7 @@ public class MergeList {
 				}
 			}
 		}
-		Node current = head;
+		Node current = head1;
 		Node nextnode = null;
 		int temp;
 		while (current != null) {
